@@ -185,6 +185,8 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Providers\YoyoLaravelServiceProvider::class,
+        Clickfwd\Yoyo\Blade\YoyoServiceProvider::class,
 
         /*
          * Application Service Providers...
