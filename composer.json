@@ -10,7 +10,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "clickfwd/yoyo": "^0.8"        
+        "clickfwd/yoyo": "^0.9"        
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -21,15 +21,6 @@
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/Users/alejandro/ClickFWD Dev/Git repositories/yoyo/yoyo",
-            "options": {
-                "symlink": false
-            }
-        }
-    ],
     "autoload": {
         "psr-4": {
             "App\\": "app/",
