@@ -19,12 +19,12 @@ class YoyoLaravelServiceProvider extends ServiceProvider
     {
         $yoyo = $this->app->make('yoyo');
 
-        $this->app['router']->middleware('web')->any('/yoyo', function() use ($yoyo) {
+        $this->app['router']->middleware('web')->any(config('yoyo.route'), function() use ($yoyo) {
           return $yoyo->update();
         });
 
         $yoyo->configure([
-          'url' => '/'.config('yoyo.route'),
+          'url' => config('yoyo.route'),
           'scriptsPath' => config('yoyo.scripts_path').'/',
           'namespace' => config('yoyo.namespace')
         ]);
@@ -34,7 +34,7 @@ class YoyoLaravelServiceProvider extends ServiceProvider
         
         $yoyo->registerViewProvider(function() {
           $blade = new BladeViewProvider($this->app->get('view'));
-          $blade->addLocation(resource_path('views/yoyo'));
+          $blade->addLocation(resource_path(config('yoyo.resources')));
           return $blade;
         });
     }
